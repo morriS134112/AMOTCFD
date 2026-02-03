@@ -1,2 +1,5 @@
 # AMOTCFD
 在高密度場景或存在遮蔽情況時，MOT容易發生身份切換（Identity Switch, IDS）與目標丟失（False Negative, FN）的問題，導致頻繁發生辨識錯誤和追蹤到錯誤目標的情況，進而影響到整體準確性。有鑑於此，本論文提出「信心感知融合與雙通道特徵解耦的自適應多目標追蹤（Adaptive Multi-Object Tracking by Confidence-Aware Fusion and Dual-Channel Features Decoupling, AMOTCFD）」，透過深度學習與資料關聯優化，提升高密度與遮蔽環境下的MOT追蹤魯棒性與辨識準確率，並從以下幾個面向進行探討。首先，在特徵提取與識別階段，AMOTCFD以FairMOT為基礎加以改良，提出雙通道特徵解耦（Dual Channel Feature Decoupling, DCFD），將目標檢測特徵與身份重識別（Re-Identification, Re-ID）特徵進行解耦，避免相互干擾，提升高密度與遮蔽場景中的身份辨識能力。接著在模型融合階段，提出自適應任務融合（Adaptive Task Fusion, ATF），透過使Re-ID能夠充分利用檢測結果資訊，以提高遮蔽情境下的ID一致性。最後提出置信度自適應資料關聯（Confidence Adaptive Data Association, CADA），透過動態調整檢測置信度與關聯權重，降低遮蔽所導致的錯誤關聯風險。在實驗結果與分析階段，使用MOT17與MOT20資料集進行測試，並採用MOTA (Multiple Object Tracking Accuracy)、IDF1 (Identification F1 Score)、HOTA (Higher Order Tracking Accuracy)、NumberIDS (Numbers of IDS)作為模型效能的評估指標。透過雙通道特徵解耦、自適應任務融合及置信度自適應資料關聯，解決現有MOT在遮蔽場景下的辨識瓶頸，在MOT17，IDF1至多上升4.0%，MOTA至多上升1.3%，HOTA至多上升1.3%，NumberIDS至多下降1680次，在MOT20，IDF1至多上升7.4%，MOTA至多上升13.1%，HOTA至多上升5.5%，NumberIDS至多下降4561次。
+
+<img width="881" height="469" alt="image" src="https://github.com/user-attachments/assets/e04c49f8-e995-4788-a38c-b2ee992e2426" />
+
